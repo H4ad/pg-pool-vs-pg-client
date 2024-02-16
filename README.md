@@ -22,3 +22,11 @@ I run twice, one with `LIMIT 10` in the results and the other one without the li
 
 - [With Limit](./RESULTS-with-limit.md)
 - [Without Limit](./RESULTS-without-limit.md)
+
+## Conclusion
+
+If you return tiny data, using `pg.Pool` will be better.
+
+If you return a lot of data, maybe `pg.Pool` will be slower than just having one `pg.Client`.
+
+The reason? I don't know, maybe is the overhead of sending data `pg->node->user`, or another thing? If you know, ping me on [Twitter](https://twitter.com/vinii_joga10).
